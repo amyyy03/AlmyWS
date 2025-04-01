@@ -1,0 +1,119 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #0f0f0f;
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.navbar .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo-container .logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar .logo-container .logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar .links_navegador {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .links_navegador li {
+  display: inline;
+}
+
+.navbar .links_navegador a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 15px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+  position: relative;
+}
+
+.navbar .links_navegador a:hover {
+  color: #d400ff;
+  transform: scale(1.1);
+}
+
+.navbar .links_navegador a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar .links_navegador a:hover::after {
+  width: 100%;
+}
+
+.navbar .links_navegador a.active {
+  color: #d400ff;
+}
+
+.navbar .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar .links_navegador {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #0f0f0f;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    display: none;
+  }
+
+  .navbar .links_navegador.active {
+    display: flex;
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+  }
+
+  .navbar .logo-container .logo-img {
+    height: 30px;
+  }
+
+  .navbar .logo-container .logo-text {
+    font-size: 18px;
+  }
+}
