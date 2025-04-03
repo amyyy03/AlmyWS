@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f3085d1.css",
+    "main.js": "/static/js/main.5a60a2da.js",
+    "static/js/453.952d6f85.chunk.js": "/static/js/453.952d6f85.chunk.js",
+    "static/media/sofia-pro-regular-az.otf": "/static/media/sofia-pro-regular-az.d36998f5d9772461be21.otf",
+    "static/media/chaney-ultraextended.otf": "/static/media/chaney-ultraextended.4dd0f12d2c584f5260a0.otf",
+    "index.html": "/index.html",
+    "main.1f3085d1.css.map": "/static/css/main.1f3085d1.css.map",
+    "main.5a60a2da.js.map": "/static/js/main.5a60a2da.js.map",
+    "453.952d6f85.chunk.js.map": "/static/js/453.952d6f85.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f3085d1.css",
+    "static/js/main.5a60a2da.js"
+  ]
+}

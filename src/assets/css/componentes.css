@@ -4,7 +4,7 @@
   align-items: center;
   padding: 15px 25px;
   background-color: #0f0f0f;
-  color: white;
+  color: rgb(221, 209, 209);
   position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   z-index: 1000;
