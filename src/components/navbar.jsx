@@ -1,27 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import '../assets/css/componentes.css';  
+import { FaInstagram, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FiArrowUpRight, FiMenu, FiX } from 'react-icons/fi';
+import '../assets/css/componentes.css';
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav>
-      <ul className="navbar">
-        <li>
-          <NavLink to="/" exact className="nav-link" activeClassName="active">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/about" className="nav-link" activeClassName="active">
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" className="nav-link" activeClassName="active">
-            Contact
-          </NavLink>
-        </li>
+    <nav className="navbar">
+      <div className="logo">Almy</div>
+
+      {/* Botón hamburguesa (solo en móvil) */}
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FiX /> : <FiMenu />}
+      </div>
+
+      {/* Links en pantallas grandes */}
+      <ul className="nav-links">
+        {['Home', 'About Us', 'Projects', 'Contact'].map((item, index) => (
+          <li key={index} className="nav-item">
+            <NavLink to={item.toLowerCase().replace(' ', '-')} className="nav-link">
+              <FiArrowUpRight className="arrow-icon" />
+              <span className="link-text">{item}</span>
+            </NavLink>
+          </li>
+        ))}
       </ul>
+
+      {/* Iconos de redes */}
+      <div className="nav-icons">
+        <FaInstagram />
+        <FaGithub />
+        <FaLinkedin />
+      </div>
+
+      {/* Menú móvil lateral */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <ul>
+          {['Home', 'About Us', 'Projects', 'Contact'].map((item, index) => (
+            <li key={index}>
+              <NavLink 
+                to={item.toLowerCase().replace(' ', '-')} 
+                className="nav-link" 
+                onClick={() => setMenuOpen(false)}
+              >
+                {item}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };

@@ -1,119 +1,142 @@
+/*----------------------------------NAVBAR-------------------------------------------*/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 25px;
-  background-color: #0f0f0f;
-  color: rgb(221, 209, 209);
+  background-color: black;
+  padding: 15px 50px;
+  color: white;
+  font-family: 'Sofia Pro Regular Az', sans-serif;
+}
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-item {
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  z-index: 1000;
 }
 
-.navbar .logo-container {
+.nav-link {
+  text-decoration: none;
+  color: #777;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  transition: color 0.3s ease;
 }
-
-.navbar .logo-container .logo-img {
-  height: 40px;
-  width: auto;
-}
-
-.navbar .logo-container .logo-text {
-  font-size: 22px;
-  font-weight: bold;
+.nav-link:hover .link-text {
   color: white;
 }
-
-.navbar .links_navegador {
-  list-style: none;
+.nav-link .arrow-icon {
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.nav-link:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+.nav-links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  list-style: none; 
   margin: 0;
   padding: 0;
 }
-
-.navbar .links_navegador li {
-  display: inline;
+.nav-links li {
+  margin: 0;
+  padding: 0;
 }
-
-.navbar .links_navegador a {
+.nav-link {
   text-decoration: none;
-  color: white;
+  color: #777;
   font-size: 16px;
-  font-weight: 500;
-  padding: 8px 15px;
-  transition: color 0.3s ease-in-out, transform 0.3s ease;
   position: relative;
+  transition: color 0.3s ease;
 }
-
-.navbar .links_navegador a:hover {
-  color: #d400ff;
-  transform: scale(1.1);
+.nav-link:hover,
+.nav-link.active {
+  color: white;
 }
-
-.navbar .links_navegador a::after {
-  content: '';
+.nav-link::after {
+  content: "";
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: -2px;
   width: 0;
   height: 2px;
   background-color: white;
   transition: width 0.3s ease-in-out;
 }
-
-.navbar .links_navegador a:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
-
-.navbar .links_navegador a.active {
-  color: #d400ff;
+.nav-icons {
+  display: flex;
+  gap: 10px;
+}
+.nav-icons svg {
+  color: white;
+  transition: color 0.3s ease;
+}
+.nav-icons svg:hover {
+  color: #ccc;
+  cursor: pointer;
 }
 
-.navbar .menu-toggle {
+/* ------------------------------LISTA NAVBAR ESTILO HAMBURGUESA-----------------------------------------*/
+.hamburger {
   display: none;
-  background: none;
-  border: none;
+  font-size: 28px;
   color: white;
-  font-size: 24px;
   cursor: pointer;
-  padding: 10px;
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: black;
+  padding-top: 60px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+.mobile-menu.open {
+  left: 0;
+}
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.mobile-menu li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #333;
+}
+.mobile-menu a {
+  text-decoration: none;
+  color: #777;
+  font-size: 16px;
+  display: block;
+}
+.mobile-menu a:hover {
+  color: white;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 10px 15px;
-  }
-
-  .navbar .links_navegador {
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #0f0f0f;
-    padding: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  .nav-links {
     display: none;
   }
 
-  .navbar .links_navegador.active {
-    display: flex;
-  }
-
-  .navbar .menu-toggle {
+  .hamburger {
     display: block;
   }
-
-  .navbar .logo-container .logo-img {
-    height: 30px;
-  }
-
-  .navbar .logo-container .logo-text {
-    font-size: 18px;
-  }
 }
+
+/*-----------------------------------FOOTER-------------------------------------------*/
